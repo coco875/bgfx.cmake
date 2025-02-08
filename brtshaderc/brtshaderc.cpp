@@ -40,7 +40,7 @@ void printError(FILE* file, const char* format, ...)
 // #undef BX_CHECK
 
 // include original shaderc code files
-#include "../shaderc/shaderc.cpp"
+#include "shaderc.cpp"
 //#define static_allocate static_allocate_shaderc
 //#define static_deallocate static_deallocate_shaderc
 //#include "../shaderc/shaderc_spirv.cpp"
@@ -512,4 +512,4 @@ namespace shaderc
 }
 
 // restore previous defines BX_TRACE BX_WARN and BX_CHECK
-#include "../shaderc/shaderc.h"
+#include "shaderc.h"

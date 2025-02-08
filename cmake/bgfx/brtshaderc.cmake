@@ -12,8 +12,6 @@
 file(
 	GLOB
 	BRTSHADERC_SOURCES #
-	${BGFX_DIR}/tools/shaderc/*.cpp #
-	${BGFX_DIR}/tools/shaderc/*.h #
 	${BGFX_DIR}/src/shader* #
     ${BRTSHADERC_DIR}/*.cpp #
     ${BRTSHADERC_DIR}/*.h #
@@ -22,6 +20,8 @@ file(
 add_library(brtshaderc STATIC ${BRTSHADERC_SOURCES})
 
 target_include_directories(brtshaderc PUBLIC ${BRTSHADERC_DIR})
+
+add_compile_definitions(BRTSHADERC_LIBRARY)
 
 target_link_libraries(
 	brtshaderc
