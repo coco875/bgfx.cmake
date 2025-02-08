@@ -27,6 +27,7 @@ if(BGFX_BUILD_TOOLS_SHADER)
 	include(3rdparty/fcpp.cmake)
 	include(3rdparty/webgpu.cmake)
 	include(shaderc.cmake)
+	include(brtshaderc.cmake)
 endif()
 
 include(shared.cmake)
