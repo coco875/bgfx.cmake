@@ -8,12 +8,6 @@
 # You should have received a copy of the CC0 Public Domain Dedication along with
 # this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-if( NOT BRTSHADERC_DIR )
-	set( BRTSHADERC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/brtshaderc" CACHE STRING "Location of brtshaderc." )
-elseif( NOT IS_ABSOLUTE "${BRTSHADERC_DIR}")
-	get_filename_component(BRTSHADERC_DIR "${BRTSHADERC_DIR}" REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
-endif()
-
 # Grab the brtshaderc source files
 file(
 	GLOB
@@ -25,9 +19,9 @@ file(
     ${BRTSHADERC_DIR}/*.h #
 )
 
-add_library(brtshaderc ${BRTSHADERC_SOURCES})
+add_library(brtshaderc STATIC ${BRTSHADERC_SOURCES})
 
-target_include_directories(brtshaderc PRIVATE ${BRTSHADERC_DIR})
+target_include_directories(brtshaderc PUBLIC ${BRTSHADERC_DIR})
 
 target_link_libraries(
 	brtshaderc
